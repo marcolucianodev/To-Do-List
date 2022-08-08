@@ -1,32 +1,55 @@
-import React, { useState } from 'react';
-import Form from '../components/Form';
-import ListItem from '../components/ListItem';
+import { useState } from "react";
+import CardTask from "../components/CardTask";
 
 const Home = () => {
 
-  const [lists, setLists] = useState([]);
+  // const [list, setList] = useState([]);
+  // const [newItem, setNewItem] = useState("");
 
-  const handleTaskAdd = (list) => {
-    setLists([...lists, list])
-    console.log(list)
+  const [card, setCard] = useState([]);
+  const [newCard, setNewCard] = useState("");
+
+  // const addNewItem = () => {
+  //   setList([...list, newItem]);
+  //   setNewItem("");
+  // }
+
+  const addNewCard = () => {
+    setCard([...card, newCard]);
+    setNewCard("");
   }
 
-  const deleteTask = (id) => {
-    console.log(id)
-    let filteredId = lists.filter((list) => list.id !== id)
-    setLists(filteredId)
+  // const deleteItem = (index) => {
+  //   const tempArr = [...list];
+  //   tempArr.splice(index, 1)
+
+  //   setList(tempArr);
+  // }
+
+  const deleteCard = (index) => {
+    const tempCard = [...card]
+    tempCard.splice(index, 1)
+
+    setCard(tempCard)
+    console.log('DELETE CARD')
+    console.log(index)
+
   }
 
   return (
     <>
-      <Form handleTaskAdd={handleTaskAdd} />
-        <div style={{backgroundColor: "red"}}>
-          {lists.map((list) => (
-            <ListItem list={list} key={list.id} deleteTask={deleteTask}/>
-          ))}
-        </div>    
+    <input type="text" value={newCard} onChange={(e) => setNewCard(e.target.value)} />
+    <button  onClick={() => addNewCard()}>Add</button>
+      <ul>
+        {card.map((card, index) => (
+          <li key={index}>
+            <label>{card}</label>
+            <CardTask deletecard={() => deleteCard(index)} />
+          </li>
+        ))}
+      </ul>
     </>
-  );
+  )
 }
 
 export default Home;
