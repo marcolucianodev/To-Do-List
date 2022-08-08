@@ -1,5 +1,5 @@
-import './App.css';
 import Home from './pages/Home';
+import GlobalStyles from './GlobalStyles';
 
 
 const App = () => {
@@ -7,6 +7,7 @@ const App = () => {
   return (
     <>
       <Home />
+      <GlobalStyles />
     </>
   );
 }

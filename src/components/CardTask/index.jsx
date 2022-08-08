@@ -1,4 +1,9 @@
 import { useState } from "react";
+import { Button, FormContainer, InputText } from "../../pages/styles";
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { ListContent, ListItems } from "./styles";
+import deleteIcon from "../../assets/images/trash-icon.png"
 
 
 const CardTask = ({deletecard}) => {
@@ -20,24 +25,46 @@ const CardTask = ({deletecard}) => {
 
   return (
     <>
-      <input type="text" value={newItem} onChange={(e) => setNewItem(e.target.value)} />
-      <button  onClick={() => addNewItem()}>+ Add</button>
+    <FormContainer>
+      <InputText
+        type="text" 
+        value={newItem} 
+        onChange={(e) => setNewItem(e.target.value)}
+        placeholder="Adicione sub-itens á sua lista"
+      />
+      <Button 
+        onClick={() => addNewItem()}
+        bradiusrigth
+        bgButton="#E2E8E9"
+      >
+        <AddIcon />
+      </Button>
+    </FormContainer>
+      {/* <input type="text" value={newItem} onChange={(e) => setNewItem(e.target.value)} />
+      <button  onClick={() => addNewItem()}>+ Add</button> */}
       
       {/* trabalando botao DELETAR CARD */}
 
-      <button onClick={deletecard}>Botao deletar</button>
+      {/* <button onClick={deletecard}>Botao deletar</button> */}
       
       {/* FIM */}
 
 
-      <ul>
+      <ListContent>
         {list.map((item, index) => (
-          <li key={index}>
+          <ListItems key={index}>
             {item}
-            <button onClick={() => deleteItem(index)}>X</button>
-          </li>
+            {/* <button onClick={() => deleteItem(index)}>X</button> */}
+            <Button 
+              onClick={() => deleteItem(index)}
+              bgButton="transparent"
+            >
+              {/* <DeleteIcon className="delete-icon"/> */}
+              <img src={deleteIcon} alt="Delete" />
+            </Button>
+          </ListItems>
         ))}
-      </ul>
+      </ListContent>
     </>
   )
 }
