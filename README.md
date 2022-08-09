@@ -1,6 +1,6 @@
 # To Do List Dinâmica
 
-[![Preview Image](https://github.com/marcolucianodev/To-Do-List/blob/master/src/assets/images/to-do-list.png)](https://markus-social-network.netlify.app/)
+[![Preview Image](https://github.com/marcolucianodev/To-Do-List/blob/master/src/assets/images/to-do-list.png)](https://react-lista-de-tarefas.netlify.app/)
 
 Projeto proposto em um teste técnico da empresa We.Digi.
 
@@ -8,7 +8,7 @@ Este projeto consiste em uma Lista de Tarefas Dinâmica, onde o usuário pode cr
 
 Projeto desenvolvido em React.js e styled-components.
 
-[Link do Projeto Online](https://markus-social-network.netlify.app/)
+[Link do Projeto Online](https://react-lista-de-tarefas.netlify.app/)
 
 ### Pré-requisitos
 
