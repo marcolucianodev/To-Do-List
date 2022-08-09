@@ -17,6 +17,7 @@ export const MainContent = styled.main`
   background-color: #FFFFFF;
   max-height: 926px;
   overflow: auto;
+  min-height: 100vh;
 `;
 
 export const FormContainer = styled.section`
@@ -70,6 +71,7 @@ export const CardHead = styled.div`
 
     label {
       font-weight: 700;
+      line-break: anywhere;
     }
   }
 `;
