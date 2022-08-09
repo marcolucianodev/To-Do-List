@@ -1,10 +1,6 @@
 # To Do List Dinâmica
 
-[![Preview Image](https://github.com/marcolucianodev/markus-social-network/blob/master/public/markus-img01.png)](https://markus-social-network.netlify.app/)
-
-[![Preview Image](https://github.com/marcolucianodev/markus-social-network/blob/master/public/markus-img02.png)](https://markus-social-network.netlify.app/)
-
-[![Preview Image](https://github.com/marcolucianodev/markus-social-network/blob/master/public/markus-img03.png)](https://markus-social-network.netlify.app/)
+[![Preview Image](https://github.com/marcolucianodev/To-Do-List/blob/master/src/assets/images/to-do-list.png)](https://markus-social-network.netlify.app/)
 
 Projeto proposto em um teste técnico da empresa We.Digi.
 
