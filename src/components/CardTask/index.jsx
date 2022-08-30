@@ -10,12 +10,25 @@ import {
   ListItems 
 } from "./styles";
 import deleteIcon from "../../assets/images/trash-icon.png"
+import EditItems from "../EditItems";
 
 
 const CardTask = () => {
 
   const [list, setList] = useState([]);
   const [newItem, setNewItem] = useState("");
+
+  // Abrir box editar items
+  const [openEditModal, setOpenEditModal] = useState(false);
+
+  const handleClose = () => {
+    setOpenEditModal(!openEditModal)
+  }
+
+  const editList = (index, newText) => {
+    // console.log(index)
+    // console.log(list[index])
+  }
 
   const addNewItem = () => {
     setList([...list, newItem]);
@@ -31,6 +44,10 @@ const CardTask = () => {
 
   return (
     <>
+
+    {/* Componente que edita as tarefas */}
+    {/* <EditItems open={openEditModal} /> */}
+
     <FormContainer>
       <InputText
         type="text" 
@@ -49,13 +66,21 @@ const CardTask = () => {
 
       <ListContent>
         {list.map((item, index) => (
-          <ListItems key={index}>
-            {item}
+          <ListItems key={index} >
+
+            {/* Componente que edita as tarefas */}
+            {openEditModal &&
+              <EditItems close={handleClose} list={item} />
+            }
+
+            {console.log(list)}
+
+            <p onClick={() => setOpenEditModal(true)}>{item}</p>
             <Button 
               onClick={() => deleteItem(index)}
               bgButton="transparent"
             >
-              <img src={deleteIcon} alt="Delete" />
+              <img src={deleteIcon} alt="Delete" />                       
             </Button>
           </ListItems>
         ))}
